@@ -3,6 +3,7 @@ const tilList = document.querySelector("#til-list");
 const tilDateInput = document.querySelector("#til-date");
 const tilTitleInput = document.querySelector("#til-title");
 const tilContentInput = document.querySelector("#til-content");
+const tilResetButton = document.querySelector("#til-reset-button");
 
 if (tilDateInput) {
   tilDateInput.value = new Date().toISOString().split("T")[0];
@@ -39,5 +40,16 @@ if (tilForm && tilList && tilDateInput && tilTitleInput && tilContentInput) {
     tilForm.reset();
     tilDateInput.value = new Date().toISOString().split("T")[0];
     tilTitleInput.focus();
+  });
+}
+
+if (tilResetButton && tilList && tilDateInput && tilTitleInput) {
+  tilResetButton.addEventListener("click", function () {
+    tilList.innerHTML = "";
+
+    requestAnimationFrame(function () {
+      tilDateInput.value = new Date().toISOString().split("T")[0];
+      tilTitleInput.focus();
+    });
   });
 }
