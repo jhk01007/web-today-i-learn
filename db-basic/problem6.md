@@ -10,6 +10,6 @@
 ```sql
 SELECT * FROM attendance
 WHERE attendance_date = '2025-03-06'
-  AND start_time BETWEEN '09:30:00' AND '09:32:00'
-  AND end_time BETWEEN '18:00:00' AND '18:02:00';
+  AND start_time = '09:31:00'
+  AND end_time = '18:01:00';
 ```
