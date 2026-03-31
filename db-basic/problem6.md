@@ -7,9 +7,15 @@
 
 일단, 정말로 어셔의 기록이 누락됐는지부터 확인해 보자.
 
-```sql
-SELECT * FROM attendance
-WHERE attendance_date = '2025-03-06'
-  AND start_time = '09:31:00'
-  AND end_time = '18:01:00';
-```
+1. (현재 crew 테이블에 어셔가 없으므로) 먼저 '어셔'를 crew 테이블에 저장한다.
+   ``` sql
+    INSERT INTO crew(crew_id, nickname) VALUES(13, '어셔');
+   ```
+2. 데이터를 조회한다.
+    ```sql
+    SELECT * FROM attendance
+    WHERE crew_id = 13 
+      AND attendance_date = '2025-03-06'
+      AND start_time = '09:31:00'
+      AND end_time = '18:01:00'
+    ```
