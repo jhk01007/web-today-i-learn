@@ -1,3 +1,4 @@
+### 문제 1: 테이블 생성하기 (CREATE TABLE)
 1. attendance 테이블은 중복된 데이터가 쌓이는 구조이다. 중복된 데이터는 어떤 컬럼인가?
     > crew_id, nickname, attendance_date, attendance_date, start_time, end_time
 2. attendance 테이블에서 중복을 제거하기 위해 crew 테이블을 만들려고 한다. 어떻게 구성해 볼 수 있을까?
